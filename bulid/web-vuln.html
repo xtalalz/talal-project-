@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Vulnerabilities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1f1c2c, #928DAB);
+            color: #ffffff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .card {
+            background: #2e2e2e;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border-left: 5px solid #6a82fb;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
+        }
+        .details {
+            display: none;
+            margin-top: 10px;
+            border-top: 1px solid #444;
+            padding-top: 10px;
+            color: #ccc;
+        }
+        @media (max-width: 600px) {
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Common Web Vulnerabilities</h1>
+<div class="container">
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>SQL Injection</h2>
+        <p>Allows attackers to manipulate database queries.</p>
+        <div class="details">
+            <p>SQL injection occurs when user input is directly included in SQL queries without proper validation. Attackers can modify queries to extract, modify, or delete data.</p>
+            <p>Example: <code>' OR '1'='1'</code> can be injected to bypass authentication.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>XSS (Cross-Site Scripting)</h2>
+        <p>Injects malicious scripts into web pages.</p>
+        <div class="details">
+            <p>XSS vulnerabilities arise when applications accept user input without validation and output it to users. Attackers can inject scripts that execute in the context of another user’s browser.</p>
+            <p>Example: Injecting a script that steals cookies.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>CSRF (Cross-Site Request Forgery)</h2>
+        <p>Forces users to perform unwanted actions.</p>
+        <div class="details">
+            <p>CSRF tricks a user into submitting a request to a web application where they are authenticated, potentially causing unwanted actions like fund transfers.</p>
+            <p>Example: Sending a request to change user email without consent.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Command Injection</h2>
+        <p>Executes arbitrary commands on the server.</p>
+        <div class="details">
+            <p>Command injection occurs when an application passes unsafe user input to a system shell. Attackers can execute commands with the same privileges as the application.</p>
+            <p>Example: Injecting <code>; ls -la</code> to list directory contents.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>File Inclusion</h2>
+        <p>Includes files from the server or remote sources.</p>
+        <div class="details">
+            <p>File inclusion vulnerabilities allow attackers to include files on a server or remote file, which can lead to code execution or unauthorized access to sensitive files.</p>
+            <p>Example: Using <code>?page=../../etc/passwd</code> to access sensitive files.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Insecure Direct Object References</h2>
+        <p>Accesses unauthorized data or files.</p>
+        <div class="details">
+            <p>This vulnerability occurs when an application exposes a reference to an internal object, allowing users to access objects they should not be able to.</p>
+            <p>Example: Changing a URL parameter to access another user's data.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Security Misconfiguration</h2>
+        <p>Improper configuration leads to vulnerabilities.</p>
+        <div class="details">
+            <p>Security misconfigurations can occur at any level of an application stack, including cloud storage, databases, and web servers, potentially exposing sensitive data.</p>
+            <p>Example: Default credentials left unchanged.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Broken Authentication</h2>
+        <p>Exploiting weaknesses in authentication mechanisms.</p>
+        <div class="details">
+            <p>Broken authentication allows attackers to compromise user accounts, often due to poor session management or weak password policies.</p>
+            <p>Example: Predictable session identifiers or lack of account lockout mechanisms.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Sensitive Data Exposure</h2>
+        <p>Inadequate protection of sensitive information.</p>
+        <div class="details">
+            <p>Sensitive data exposure can occur when sensitive information is not properly encrypted or is transmitted over insecure channels.</p>
+            <p>Example: Sending passwords in plain text over HTTP.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Insufficient Logging & Monitoring</h2>
+        <p>Failure to log and monitor can allow for undetected attacks.</p>
+        <div class="details">
+            <p>Without proper logging and monitoring, it becomes difficult to detect and respond to attacks. This can prolong the duration of a breach.</p>
+            <p>Example: Not logging failed login attempts.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleDetails(card) {
+        const details = card.querySelector('.details');
+        details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>

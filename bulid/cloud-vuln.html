@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Vulnerabilities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1f1c2c, #928DAB);
+            color: #ffffff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .card {
+            background: #2e2e2e;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border-left: 5px solid #6a82fb;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
+        }
+        .details {
+            display: none;
+            margin-top: 10px;
+            border-top: 1px solid #444;
+            padding-top: 10px;
+            color: #ccc;
+        }
+        @media (max-width: 600px) {
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Common Cloud Vulnerabilities</h1>
+<div class="container">
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Data Breaches</h2>
+        <p>Unauthorized access to sensitive cloud data.</p>
+        <div class="details">
+            <p>Data breaches occur when unauthorized individuals gain access to sensitive information stored in the cloud, often due to weak security controls.</p>
+            <p>Example: Hackers exploiting weak passwords to access customer data.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Insecure APIs</h2>
+        <p>Weaknesses in APIs can expose cloud resources.</p>
+        <div class="details">
+            <p>Insecure APIs can allow unauthorized access to cloud services if they lack proper authentication and authorization mechanisms.</p>
+            <p>Example: An API endpoint that allows public access to sensitive operations.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Misconfigured Cloud Settings</h2>
+        <p>Poorly configured settings can lead to vulnerabilities.</p>
+        <div class="details">
+            <p>Misconfigured cloud settings can expose resources to the public unexpectedly, allowing unauthorized users to access sensitive data.</p>
+            <p>Example: Leaving storage buckets publicly accessible.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Insufficient Identity and Access Management (IAM)</h2>
+        <p>Poor IAM practices can lead to unauthorized access.</p>
+        <div class="details">
+            <p>Insufficient IAM practices can allow users to have access to resources they shouldn't, increasing the risk of data breaches and misuse.</p>
+            <p>Example: Assigning overly broad permissions to users.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Lack of Encryption</h2>
+        <p>Failure to encrypt data can expose sensitive information.</p>
+        <div class="details">
+            <p>Not encrypting data stored in the cloud can lead to exposure of sensitive information if the data is accessed by unauthorized individuals.</p>
+            <p>Example: Storing sensitive documents without encryption.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Denial of Service (DoS) Attacks</h2>
+        <p>Overloading cloud services can disrupt availability.</p>
+        <div class="details">
+            <p>DoS attacks aim to make cloud services unavailable by overwhelming them with traffic, affecting legitimate users' access.</p>
+            <p>Example: Flooding a cloud application with requests to exhaust resources.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Vendor Lock-In</h2>
+        <p>Dependence on a single cloud provider can be risky.</p>
+        <div class="details">
+            <p>Vendor lock-in occurs when organizations become too dependent on a single cloud provider, making it difficult to switch providers or migrate data.</p>
+            <p>Example: Proprietary services that don’t integrate well with other platforms.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Insufficient Backup and Recovery</h2>
+        <p>Poor backup practices can lead to data loss.</p>
+        <div class="details">
+            <p>Insufficient backup and recovery measures can result in permanent data loss in the event of a breach or service disruption.</p>
+            <p>Example: Not having regular backups or a disaster recovery plan.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Shared Technology Vulnerabilities</h2>
+        <p>Multiple tenants can lead to security risks.</p>
+        <div class="details">
+            <p>Shared technology vulnerabilities occur when cloud resources are shared among multiple tenants, potentially allowing one tenant to access another's data.</p>
+            <p>Example: A multi-tenant environment where one tenant exploits a vulnerability to access another tenant's data.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Compliance Risks</h2>
+        <p>Failure to adhere to regulations can lead to penalties.</p>
+        <div class="details">
+            <p>Non-compliance with regulations, such as GDPR or HIPAA, can lead to legal repercussions and financial penalties for organizations using cloud services.</p>
+            <p>Example: Storing EU citizen data in a region that does not comply with GDPR.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleDetails(card) {
+        const details = card.querySelector('.details');
+        details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>

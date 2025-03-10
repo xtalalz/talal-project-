@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Vulnerabilities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1f1c2c, #928DAB);
+            color: #ffffff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .card {
+            background: #2e2e2e;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border-left: 5px solid #6a82fb;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
+        }
+        .details {
+            display: none;
+            margin-top: 10px;
+            border-top: 1px solid #444;
+            padding-top: 10px;
+            color: #ccc;
+        }
+        @media (max-width: 600px) {
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Common Network Vulnerabilities</h1>
+<div class="container">
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Unsecured Wi-Fi Networks</h2>
+        <p>Open networks can be easily accessed by unauthorized users.</p>
+        <div class="details">
+            <p>Unsecured Wi-Fi networks allow attackers to intercept traffic, capture sensitive data, and launch attacks on connected devices.</p>
+            <p>Example: Free public Wi-Fi in cafes or airports that lack encryption.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Weak Passwords</h2>
+        <p>Using simple or default passwords can lead to breaches.</p>
+        <div class="details">
+            <p>Weak passwords are easily guessable and can be cracked using brute-force attacks, allowing unauthorized access to network devices.</p>
+            <p>Example: Using "123456" or "password" as a Wi-Fi password.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Unpatched Software</h2>
+        <p>Failure to update software can expose vulnerabilities.</p>
+        <div class="details">
+            <p>Unpatched operating systems and applications can contain known vulnerabilities that attackers can exploit to gain unauthorized access.</p>
+            <p>Example: Not applying critical security updates to routers.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Man-in-the-Middle Attacks</h2>
+        <p>Attackers intercept communication between two parties.</p>
+        <div class="details">
+            <p>In a Man-in-the-Middle (MitM) attack, the attacker secretly relays and possibly alters communications between two parties who believe they are directly communicating with each other.</p>
+            <p>Example: Intercepting data over an unsecured Wi-Fi network.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Network Sniffing</h2>
+        <p>Capturing and analyzing network traffic can expose data.</p>
+        <div class="details">
+            <p>Network sniffing involves monitoring network traffic and can reveal sensitive information such as passwords and personal data.</p>
+            <p>Example: Using tools like Wireshark to capture unencrypted traffic.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>IP Spoofing</h2>
+        <p>Forging IP addresses to gain unauthorized access.</p>
+        <div class="details">
+            <p>IP spoofing allows attackers to impersonate another device on the network, potentially gaining unauthorized access or launching attacks.</p>
+            <p>Example: Sending packets from a forged IP address to bypass security measures.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Denial of Service (DoS)</h2>
+        <p>Overloading a network to disrupt services.</p>
+        <div class="details">
+            <p>A Denial of Service attack floods a network or service with traffic, making it unavailable to legitimate users.</p>
+            <p>Example: Using a botnet to execute a DoS attack on a web server.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Router Vulnerabilities</h2>
+        <p>Exploiting weaknesses in routers can compromise networks.</p>
+        <div class="details">
+            <p>Weaknesses in router configurations or outdated firmware can be exploited to gain access to the network.</p>
+            <p>Example: Default administrative credentials left unchanged on routers.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>DNS Spoofing</h2>
+        <p>Redirecting users to fraudulent sites.</p>
+        <div class="details">
+            <p>DNS spoofing involves corrupting DNS cache entries, redirecting users to malicious websites instead of genuine ones.</p>
+            <p>Example: Redirecting a user attempting to visit a bank's website to a phishing site.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Lack of Network Segmentation</h2>
+        <p>Not separating networks can lead to widespread vulnerabilities.</p>
+        <div class="details">
+            <p>Without proper network segmentation, a breach in one area can lead to full access to the entire network, increasing risks.</p>
+            <p>Example: A compromised guest network allowing access to internal resources.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleDetails(card) {
+        const details = card.querySelector('.details');
+        details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>

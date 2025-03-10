@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Vulnerabilities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1f1c2c, #928DAB);
+            color: #ffffff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .card {
+            background: #2e2e2e;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border-left: 5px solid #6a82fb;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
+        }
+        .details {
+            display: none;
+            margin-top: 10px;
+            border-top: 1px solid #444;
+            padding-top: 10px;
+            color: #ccc;
+        }
+        @media (max-width: 600px) {
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Common Software Vulnerabilities</h1>
+<div class="container">
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Buffer Overflow</h2>
+        <p>Exploiting excessive data input can lead to system crashes.</p>
+        <div class="details">
+            <p>A buffer overflow occurs when a program writes more data to a buffer than it can hold, which can allow attackers to execute arbitrary code.</p>
+            <p>Example: Overwriting function return addresses in memory.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Race Conditions</h2>
+        <p>Timing issues can lead to unexpected behavior in software.</p>
+        <div class="details">
+            <p>Race conditions occur when the behavior of software depends on the sequence or timing of uncontrollable events, potentially allowing attackers to exploit timing discrepancies.</p>
+            <p>Example: Exploiting a race condition in a file system to gain unauthorized access.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Memory Leaks</h2>
+        <p>Improper memory management can lead to resource exhaustion.</p>
+        <div class="details">
+            <p>Memory leaks happen when a program fails to release memory that is no longer needed, potentially leading to resource exhaustion and denial of service.</p>
+            <p>Example: An application that continually allocates memory without freeing it.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Hardcoded Credentials</h2>
+        <p>Storing passwords in code can expose sensitive information.</p>
+        <div class="details">
+            <p>Hardcoded credentials refer to storing sensitive information such as usernames and passwords directly in the code, making it easy for attackers to access them.</p>
+            <p>Example: A developer leaving database credentials in a public repository.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Insufficient Input Validation</h2>
+        <p>Failure to validate input can lead to various attacks.</p>
+        <div class="details">
+            <p>Insufficient input validation can expose applications to a variety of attacks, including SQL injection and buffer overflows, by allowing malicious input to be processed.</p>
+            <p>Example: Accepting user input without validating its format.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Command Injection</h2>
+        <p>Executing arbitrary commands can compromise systems.</p>
+        <div class="details">
+            <p>Command injection occurs when an application allows untrusted input to be executed as a command, potentially allowing attackers to execute arbitrary commands on the host system.</p>
+            <p>Example: Injecting commands into a system call via user input.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Path Traversal</h2>
+        <p>Accessing files outside of intended directories can lead to exposure.</p>
+        <div class="details">
+            <p>Path traversal vulnerabilities allow attackers to access files and directories stored outside the intended directory by manipulating file paths.</p>
+            <p>Example: Using <code>../</code> sequences to access system files.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Denial of Service (DoS)</h2>
+        <p>Overloading a service can render it unavailable.</p>
+        <div class="details">
+            <p>A Denial of Service attack aims to make a service unavailable to users by overwhelming it with traffic or exploiting vulnerabilities to crash it.</p>
+            <p>Example: Flooding a server with requests to exhaust resources.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Insecure APIs</h2>
+        <p>Weaknesses in APIs can expose applications to exploitation.</p>
+        <div class="details">
+            <p>Insecure APIs can expose sensitive data and functionality if they lack proper authentication and authorization controls, making them vulnerable to exploitation.</p>
+            <p>Example: An API that allows unauthenticated access to user data.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Outdated Libraries</h2>
+        <p>Using old libraries can introduce known vulnerabilities.</p>
+        <div class="details">
+            <p>Using outdated libraries can expose applications to known vulnerabilities that have been patched in newer versions, leading to potential exploits.</p>
+            <p>Example: Relying on a deprecated library with known security flaws.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleDetails(card) {
+        const details = card.querySelector('.details');
+        details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Vulnerabilities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1f1c2c, #928DAB);
+            color: #ffffff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .card {
+            background: #2e2e2e;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border-left: 5px solid #6a82fb;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
+        }
+        .details {
+            display: none;
+            margin-top: 10px;
+            border-top: 1px solid #444;
+            padding-top: 10px;
+            color: #ccc;
+        }
+        @media (max-width: 600px) {
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Common Hardware Vulnerabilities</h1>
+<div class="container">
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Physical Tampering</h2>
+        <p>Unauthorized access to hardware can lead to serious risks.</p>
+        <div class="details">
+            <p>Physical tampering involves unauthorized individuals gaining access to hardware components, which can lead to data breaches, theft of sensitive information, or installation of malicious hardware.</p>
+            <p>Example: An attacker accessing a server room to install keyloggers or other malicious devices.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Hardware Backdoors</h2>
+        <p>Malicious hardware modifications can create vulnerabilities.</p>
+        <div class="details">
+            <p>Hardware backdoors are intentionally created vulnerabilities within hardware components that allow unauthorized access or control, often undetectable by standard security measures.</p>
+            <p>Example: A compromised network card that allows remote access.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Firmware Vulnerabilities</h2>
+        <p>Outdated firmware can expose devices to attacks.</p>
+        <div class="details">
+            <p>Firmware vulnerabilities occur when device firmware is outdated or poorly designed, leading to exploitable weaknesses that attackers can use to gain control or access sensitive information.</p>
+            <p>Example: A printer with a known firmware flaw that allows unauthorized access.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Insecure Interfaces</h2>
+        <p>Weak interfaces can be exploited for unauthorized access.</p>
+        <div class="details">
+            <p>Insecure interfaces in hardware devices can expose management functions and allow attackers to perform unauthorized actions, potentially compromising the device and network.</p>
+            <p>Example: Unprotected admin interfaces on IoT devices.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Supply Chain Attacks</h2>
+        <p>Compromising hardware during manufacturing or delivery.</p>
+        <div class="details">
+            <p>Supply chain attacks occur when hardware is tampered with during manufacturing, transport, or installation, allowing attackers to insert vulnerabilities before the device is even used.</p>
+            <p>Example: Malicious modifications to hardware components before delivery.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Insufficient Physical Security</h2>
+        <p>Poor security measures can lead to unauthorized access.</p>
+        <div class="details">
+            <p>Insufficient physical security measures, such as lack of surveillance, locks, or access control, can allow unauthorized individuals to gain access to sensitive hardware.</p>
+            <p>Example: A data center without proper access controls or monitoring.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Device Theft</h2>
+        <p>Loss of hardware can lead to data breaches.</p>
+        <div class="details">
+            <p>Theft of devices containing sensitive data can lead to significant data breaches if proper protective measures are not in place, such as encryption or remote wipe capabilities.</p>
+            <p>Example: A stolen laptop containing confidential information.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Malicious USB Devices</h2>
+        <p>Using infected USB drives can compromise systems.</p>
+        <div class="details">
+            <p>Malicious USB devices can be used to introduce malware or exploit vulnerabilities in systems when plugged in, often without the user's knowledge.</p>
+            <p>Example: A USB drive left in a public place that contains malware.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Overheating and Physical Damage</h2>
+        <p>Failure to maintain hardware can lead to vulnerabilities.</p>
+        <div class="details">
+            <p>Overheating and physical damage to hardware can lead to failures, data loss, and potential exploitation of compromised systems if not properly managed.</p>
+            <p>Example: A server that overheats due to inadequate cooling measures.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Outdated Hardware</h2>
+        <p>Legacy hardware may lack modern security features.</p>
+        <div class="details">
+            <p>Outdated hardware often lacks the necessary security features and support for modern protocols, making it more vulnerable to attacks.</p>
+            <p>Example: An old network switch that cannot be updated to support current security standards.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleDetails(card) {
+        const details = card.querySelector('.details');
+        details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>

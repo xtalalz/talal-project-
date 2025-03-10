@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physical Vulnerabilities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1f1c2c, #928DAB);
+            color: #ffffff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .card {
+            background: #2e2e2e;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border-left: 5px solid #6a82fb;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
+        }
+        .details {
+            display: none;
+            margin-top: 10px;
+            border-top: 1px solid #444;
+            padding-top: 10px;
+            color: #ccc;
+        }
+        @media (max-width: 600px) {
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Common Physical Vulnerabilities</h1>
+<div class="container">
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Unauthorized Access</h2>
+        <p>Unrestricted access to facilities can lead to security breaches.</p>
+        <div class="details">
+            <p>Unauthorized access occurs when individuals gain entry to restricted areas without proper permissions, potentially leading to theft or sabotage.</p>
+            <p>Example: An intruder entering a server room without a key card.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Physical Theft</h2>
+        <p>Stealing hardware can result in data breaches and loss.</p>
+        <div class="details">
+            <p>Physical theft involves the stealing of devices such as laptops, servers, or mobile phones, which may contain sensitive information.</p>
+            <p>Example: A laptop stolen from an employee's car.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Environmental Hazards</h2>
+        <p>Natural disasters can damage facilities and equipment.</p>
+        <div class="details">
+            <p>Environmental hazards, such as floods, earthquakes, or fires, can physically damage infrastructure, leading to operational downtime and data loss.</p>
+            <p>Example: A flood damaging a data center.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Insufficient Surveillance</h2>
+        <p>Lack of monitoring can enable unauthorized activities.</p>
+        <div class="details">
+            <p>Insufficient surveillance, such as inadequate camera coverage or security personnel, can make it easier for unauthorized individuals to engage in malicious activities.</p>
+            <p>Example: Blind spots in security camera coverage.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Social Engineering</h2>
+        <p>Manipulating individuals to gain unauthorized access.</p>
+        <div class="details">
+            <p>Social engineering exploits human psychology to trick individuals into divulging confidential information or granting access to restricted areas.</p>
+            <p>Example: An attacker posing as an IT staff member to gain access to secure areas.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Poorly Secured Equipment</h2>
+        <p>Unsecured devices can be easily accessed and exploited.</p>
+        <div class="details">
+            <p>Poorly secured equipment, such as servers left unlocked or unattended, can be compromised by unauthorized individuals, leading to data breaches.</p>
+            <p>Example: An open server rack in a public area.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Inadequate Training</h2>
+        <p>Staff unprepared for security threats can increase risk.</p>
+        <div class="details">
+            <p>Inadequate training on security protocols can leave staff unaware of potential threats, making them more susceptible to attacks.</p>
+            <p>Example: Employees not recognizing phishing attempts or social engineering tactics.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Access Control Weaknesses</h2>
+        <p>Poor access controls can lead to unauthorized entry.</p>
+        <div class="details">
+            <p>Weaknesses in access control systems, such as ineffective key management or lack of biometric security, can allow unauthorized individuals to gain access to sensitive areas.</p>
+            <p>Example: Using generic passcodes that anyone can guess.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Malicious Insider Threats</h2>
+        <p>Current employees can pose significant risks.</p>
+        <div class="details">
+            <p>Malicious insiders, such as disgruntled employees, can exploit their access to steal data or sabotage operations from within the organization.</p>
+            <p>Example: An employee leaking sensitive information to competitors.</p>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleDetails(this)">
+        <h2>Inadequate Emergency Procedures</h2>
+        <p>Lack of response plans can worsen crisis situations.</p>
+        <div class="details">
+            <p>Inadequate emergency procedures can leave organizations unprepared for crises, leading to severe consequences during incidents such as fires or security breaches.</p>
+            <p>Example: Not having a clear evacuation plan during a fire.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleDetails(card) {
+        const details = card.querySelector('.details');
+        details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>
